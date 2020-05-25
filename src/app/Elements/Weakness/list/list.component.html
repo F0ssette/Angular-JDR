@@ -4,9 +4,25 @@
 
     <div class="weak">
 
-        <ul *ngFor="let weaknessTag of weaknessTags" class="list-group-flush">
-            <li class="list-group-item">{{ weaknessTag.name }}</li>
-        </ul>
+        <table class="table table-dark">
+
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let weaknessTag of weaknessTags">
+                    <td>{{ weaknessTag.id }}</td>
+                    <td>{{ weaknessTag.name }}</td>
+                    <td><button class="btn btn-danger" (click)="deleteWeaknessTag(weaknessTag.id)">Supprimer</button>
+                        <button class="btn btn-warning"
+                            [routerLink]="['edit/', weaknessTag.id]">Modifier</button></td>
+                </tr>
+            </tbody>
+
+        </table>
     </div>
 
 </div>

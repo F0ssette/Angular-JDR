@@ -1,5 +1,4 @@
 import { WeaknessTagService } from './../../../Services/weakness-tag.service';
-import { WeaknessTag } from './../../../Models/weaknessTag.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -20,10 +19,17 @@ export class ListComponent implements OnInit {
   }
 
   getWeaknessTag() {
-    this.weaknessTagService.getWeaknessTags()
-    .subscribe(data => {
-      this.weaknessTags = data;
-    })
+    this.weaknessTagService.getWeaknessTag()
+      .subscribe(data => {
+        this.weaknessTags = data;
+      })
+  }
+
+  // Delete WeaknessTag
+  deleteWeaknessTag(id) {
+    this.weaknessTagService.deleteWeaknessTag(id)
+      .subscribe();
+      this.weaknessTags = this.weaknessTags.filter(element => element.id !==id);
   }
 
 }
