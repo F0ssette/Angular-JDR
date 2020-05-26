@@ -1,0 +1,18 @@
+<div class="container">
+
+    <h1>Ajouter un Power Tag</h1>
+
+    <form [formGroup]="powerForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="name">Power Tag</label>
+            <input type="text" name="name" formControlName="name" class="form-control">
+        </div>
+
+        <div class="bouton">
+            <button type="submit" class="btn btn-dark">Sauvegarder</button> <button class="btn btn-dark"><a
+                    href="power">Retour</a></button>
+        </div>
+    </form>
+
+</div>

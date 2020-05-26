@@ -8,21 +8,18 @@
 
             <thead>
                 <tr>
-                    <th scope="col">id</th>
                     <th scope="col">name</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let weaknessTag of weaknessTags">
-                    <td>{{ weaknessTag.id }}</td>
-                    <td>{{ weaknessTag.name }}</td>
-                    <td><button class="btn btn-danger" (click)="deleteWeaknessTag(weaknessTag.id)">Supprimer</button>
-                        <button class="btn btn-warning"
-                            [routerLink]="['edit/', weaknessTag.id]">Modifier</button></td>
+                <tr *ngFor="let weakness of weaknessTags">
+                    <td>{{ weakness.name }}</td>
+                    <td><button class="btn btn-light" (click)="deleteWeaknessTag(weakness.id)">Supprimer</button>
+                        <button class="btn btn-light" [routerLink]="['edit/', weakness.id]">Modifier</button></td>
                 </tr>
             </tbody>
-
         </table>
+        <button class="btn btn-dark" [routerLink]="['new/']">Ajouter une Weakness</button>
     </div>
 
 </div>

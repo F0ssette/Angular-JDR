@@ -1,0 +1,18 @@
+<div class="container">
+
+    <h1>Ajouter un Story Tag</h1>
+
+    <form [formGroup]="storyForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="name">Story Tag</label>
+            <input type="text" name="name" formControlName="name" class="form-control">
+        </div>
+
+        <div class="bouton">
+            <button type="submit" class="btn btn-dark">Sauvegarder</button> <button class="btn btn-dark"><a
+                    href="story">Retour</a></button>
+        </div>
+    </form>
+
+</div>

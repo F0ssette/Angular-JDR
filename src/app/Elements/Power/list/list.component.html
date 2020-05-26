@@ -1,0 +1,24 @@
+<div class="container">
+
+    <h5>Liste des Power Tags</h5>
+
+    <div class="power">
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Nom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let powerTag of powerTags">
+                    <td> {{ powerTag.name }} </td>
+                    <td><button class="btn btn-light" (click)="deletePowerTag(powerTag.id)">Supprimer</button>
+                        <button class="btn btn-light" [routerLink]="['edit/', powerTag.id]">Modifier</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-dark" [routerLink]="['new/']">Ajouter un Power Tag</button>
+
+    </div>
+</div>
