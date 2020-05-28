@@ -18,6 +18,7 @@ export class ListComponent implements OnInit {
     this.getWeaknessTag();
   }
 
+  // Get WeaknessTag
   getWeaknessTag() {
     this.weaknessTagService.getWeaknessTag()
       .subscribe(data => {

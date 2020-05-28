@@ -1,0 +1,17 @@
+<div class="container">
+
+    <h1>Modifier une Nemesis</h1>
+
+    <form [formGroup]="nemesisForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Nemesis</label>
+            <input type="text" formControlName="name" class="form-control" name="name">
+        </div>
+
+        <div class="bouton">
+            <button type="submit" class="btn btn-dark">Modifier</button> <button class="btn btn-dark"><a
+                    href="nemesis">Retour</a></button>
+        </div>
+    </form>
+
+</div>

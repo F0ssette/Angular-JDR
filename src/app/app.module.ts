@@ -18,6 +18,12 @@ import { EditComponent as StoryEdit} from './Elements/Story/edit/edit.component'
 import { ListComponent as PowerList} from './Elements/Power/list/list.component';
 import { AddComponent as PowerAdd} from './Elements/Power/add/add.component';
 import { EditComponent as PowerEdit} from './Elements/Power/edit/edit.component';
+import { ListComponent as NemesisList} from './Elements/Nemesis/list/list.component';
+import { AddComponent as NemesisAdd} from './Elements/Nemesis/add/add.component';
+import { EditComponent as NemesisEdit} from './Elements/Nemesis/edit/edit.component';
+import { ListComponent as Improvement} from './Elements/Improvement/list/list.component';
+import { AddComponent as ImprovementAdd} from './Elements/Improvement/add/add.component';
+import { EditComponent as ImprovementEdit} from './Elements/Improvement/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,13 @@ import { EditComponent as PowerEdit} from './Elements/Power/edit/edit.component'
     StoryEdit,
     PowerList,
     PowerAdd,
-    PowerEdit
+    PowerEdit,
+    NemesisList,
+    NemesisAdd,
+    NemesisEdit,
+    Improvement,
+    ImprovementAdd,
+    ImprovementEdit
   ],
   imports: [
     FormsModule,

@@ -12,8 +12,12 @@ import { EditComponent as StoryEdit } from './Elements/Story/edit/edit.component
 import { ListComponent as Power} from './Elements/Power/list/list.component';
 import { AddComponent as PowerAdd} from './Elements/Power/add/add.component';
 import { EditComponent as PowerEdit} from './Elements/Power/edit/edit.component';
-
-
+import { ListComponent as Nemesis} from './Elements/Nemesis/list/list.component';
+import { AddComponent as NemesisAdd} from './Elements/Nemesis/add/add.component';
+import { EditComponent as NemesisEdit} from './Elements/Nemesis/edit/edit.component';
+import { ListComponent as Improvement } from './Elements/Improvement/list/list.component';
+import { AddComponent as ImprovementAdd} from './Elements/Improvement/add/add.component';
+import { EditComponent as ImprovementEdit} from './Elements/Improvement/edit/edit.component';
 
 const routes: Routes = [
   {
@@ -41,6 +45,24 @@ const routes: Routes = [
         { path: '', component: Power },
         { path: 'new', component: PowerAdd },
         { path: 'edit/:id', component: PowerEdit }
+      ]
+  },
+  {
+    path: 'nemesis',
+    children:
+      [
+        { path: '', component: Nemesis },
+        { path: 'new', component: NemesisAdd },
+        { path: 'edit/:id', component: NemesisEdit }
+      ]
+  },
+  {
+    path: 'improvement',
+    children:
+      [
+        { path: '', component: Improvement },
+        { path: 'new', component: ImprovementAdd },
+        { path: 'edit/:id', component: ImprovementEdit }
       ]
   },
 ];

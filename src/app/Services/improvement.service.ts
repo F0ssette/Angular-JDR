@@ -4,65 +4,65 @@ import { throwError, Observable } from 'rxjs';
 import { map, tap, catchError } from 'rxjs/operators';
 import { ErrorService } from './error-service.service';
 
-import { Nemesis } from './../Models/nemesis.model';
+import { Improvement } from './../Models/improvement.model';
 import { environment as env } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NemesisService {
+export class ImprovementService {
 
   constructor(
     private http: HttpClient,
     private errorService: ErrorService
   ) { }
 
-  // ** Get Nemesiss
-  getNemesis(): Observable<any> {
-    return this.http.get(env.apiUrl + 'nemesis/').pipe(
+  // ** Get Improvements
+  getImprovement(): Observable<any> {
+    return this.http.get(env.apiUrl + 'improvement/').pipe(
       tap(data => {
         console.log(data);
       }),
-      catchError(this.handleError('getNemesis', []))
+      catchError(this.handleError('getImprovement', []))
     )
   }
 
-    // ** Get Nemesis Detail
-    getNemesisDetail(id: number): Observable<Nemesis> {
-      return this.http.get<any>(env.apiUrl + 'nemesis/' + id)
+    // ** Get Improvement Detail
+    getImprovementDetail(id: number): Observable<Improvement> {
+      return this.http.get<any>(env.apiUrl + 'improvement/' + id)
       .pipe(
         tap(data => data),
-        catchError(this.errorService.handleError('getNemesis'))
+        catchError(this.errorService.handleError('getImprovement'))
       );
     }
 
-  // ** Add a Nemesiss
-  addNemesis(nemesis: Nemesis): Observable<Nemesis> {
-    return this.http.post<Nemesis>(env.apiUrl + 'nemesis/new', nemesis, { responseType: 'json' })
+  // ** Add a Improvements
+  addImprovement(improvement: Improvement): Observable<Improvement> {
+    return this.http.post<Improvement>(env.apiUrl + 'improvement/new', improvement, { responseType: 'json' })
       .pipe(
         tap(data => {
           console.log(data);
         }),
-        catchError(this.errorService.handleError<Nemesis>('addNemesis'))
+        catchError(this.errorService.handleError<Improvement>('addImprovement'))
       );
   }
 
-  // PUT :  Edit a nemesis
-  editNemesis(nemesis: Nemesis, id: number): Observable<Nemesis> {
-    return this.http.put<Nemesis>(env.apiUrl + 'nemesis/edit/' + id, nemesis, { responseType: 'json' })
+  // PUT :  Edit a improvement
+  editImprovement(improvement: Improvement, id: number): Observable<Improvement> {
+    return this.http.put<Improvement>(env.apiUrl + 'improvement/edit/' + id, improvement, { responseType: 'json' })
       .pipe(
-        tap((data: Nemesis) => console.log(data)),
-        catchError(this.errorService.handleError<Nemesis>('editNemesis'))
+        tap((data: Improvement) => console.log(data)),
+        catchError(this.errorService.handleError<Improvement>('editImprovement'))
       );
   }
 
-  /** DELETE: delete one nemesis */
-  deleteNemesis(id: number): Observable<Nemesis> {
-    const url = env.apiUrl + 'nemesis/delete/' + id;
+  /** DELETE: delete one improvement */
+  deleteImprovement(id: number): Observable<Improvement> {
+    const url = env.apiUrl + 'improvement/delete/' + id;
     return this.http.delete<any>(url)
       .pipe(
         tap(data => data),
-        catchError(this.errorService.handleError('deleteNemesis'))
+        catchError(this.errorService.handleError('deleteImprovement'))
       );
   }
 

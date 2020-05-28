@@ -1,4 +1,3 @@
-import { WeaknessTag } from './../../../Models/weaknessTag.model';
 import { WeaknessTagService } from './../../../Services/weakness-tag.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
